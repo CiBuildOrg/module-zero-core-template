@@ -18,7 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp.Castle.Log4Net" Version="2.3.0" />
+    <!-- These packages are temporarily removed -->
+    <!-- <PackageReference Include="Abp.Castle.Log4Net" Version="2.3.0" /> -->
+
+    <!-- These packages are temporarily added -->
+    <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
@@ -38,6 +42,9 @@
     </Reference>
     <Reference Include="Abp.AutoMapper">
       <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.AutoMapper\bin\Debug\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Castle.Log4Net">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.Castle.Log4Net\bin\Debug\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
     </Reference>
     <Reference Include="Abp.EntityFramework.Common">
       <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.EntityFramework.Common\bin\Debug\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
