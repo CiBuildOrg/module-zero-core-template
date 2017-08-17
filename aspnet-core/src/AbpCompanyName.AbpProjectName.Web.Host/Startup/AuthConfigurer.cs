@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace AbpCompanyName.AbpProjectName.Web.Host.Startup
 {
+    //TODO: This code should be modified!
     public static class AuthConfigurer
     {
         /// <summary>
@@ -20,9 +21,11 @@ namespace AbpCompanyName.AbpProjectName.Web.Host.Startup
         /// <param name="configuration">The configuration.</param>
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)
         {
+            //app.UseAuthentication();
+
             if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
             {
-                app.UseJwtBearerAuthentication(CreateJwtBearerAuthenticationOptions(app));
+                //app.UseJwtBearerAuthentication(CreateJwtBearerAuthenticationOptions(app));
             }
         }
 
@@ -31,8 +34,6 @@ namespace AbpCompanyName.AbpProjectName.Web.Host.Startup
             var tokenAuthConfig = app.ApplicationServices.GetRequiredService<TokenAuthConfiguration>();
             return new JwtBearerOptions
             {
-                AutomaticAuthenticate = true,
-                AutomaticChallenge = true,
                 TokenValidationParameters = new TokenValidationParameters
                 {
                     // The signing key must match!

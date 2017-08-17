@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <VersionPrefix>1.0.0.0</VersionPrefix>
-    <TargetFrameworks>net461;netcoreapp1.1</TargetFrameworks>
+    <TargetFrameworks>net461;netcoreapp2.0</TargetFrameworks>
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
     <AssemblyName>AbpCompanyName.AbpProjectName.Application</AssemblyName>
     <PackageId>AbpCompanyName.AbpProjectName.Application</PackageId>
@@ -19,6 +19,31 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- These references are temporarily added -->
+    <Reference Include="Abp">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp\bin\Debug\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.AutoMapper\bin\Debug\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.EntityFramework.Common\bin\Debug\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFrameworkCore">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.EntityFrameworkCore\bin\Debug\netstandard2.0\Abp.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.Zero.Common\bin\Debug\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.ZeroCore">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.ZeroCore\bin\Debug\netstandard2.0\Abp.ZeroCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.ZeroCore.EntityFrameworkCore">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.ZeroCore.EntityFrameworkCore\bin\Debug\netstandard2.0\Abp.ZeroCore.EntityFrameworkCore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

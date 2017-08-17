@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <VersionPrefix>1.0.0.0</VersionPrefix>
-    <TargetFrameworks>net461;netcoreapp1.1</TargetFrameworks>
+    <TargetFrameworks>net461;netcoreapp2.0</TargetFrameworks>
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
     <AssemblyName>AbpCompanyName.AbpProjectName.Core</AssemblyName>
     <PackageId>AbpCompanyName.AbpProjectName.Core</PackageId>
@@ -11,6 +11,8 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <UserSecretsId>AbpCompanyName-AbpProjectName-56C2EF2F-ABD6-4EFC-AAF2-2E81C34E8FB1</UserSecretsId>
     <RootNamespace>AbpCompanyName.AbpProjectName</RootNamespace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,18 +20,69 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="2.3.0" />
-    <PackageReference Include="Abp.AutoMapper" Version="2.3.0" />
-    <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="2.3.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.0.0" />
     <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="2.1.1" />
+
+    <!-- These packages are temporarily removed -->
+    <!--<PackageReference Include="Abp" Version="2.3.0" />
+    <PackageReference Include="Abp.AutoMapper" Version="2.3.0" />
+    <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="2.3.0" />-->
+
+    <!-- These packages are temporarily added -->
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.0.0" />
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="JetBrains.Annotations" Version="11.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.7.6" />
+    <PackageReference Include="Castle.LoggingFacility" Version="4.0.0" />
+    <PackageReference Include="Castle.Core" Version="4.1.1" />
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XPath.XmlDocument" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.0" />
+    <PackageReference Include="Nito.AsyncEx.Context" Version="1.1.0" />
+    <PackageReference Include="Nito.AsyncEx.Coordination" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- These references are temporarily added -->
+    <Reference Include="Abp">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp\bin\Debug\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.AutoMapper\bin\Debug\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.EntityFramework.Common\bin\Debug\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFrameworkCore">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.EntityFrameworkCore\bin\Debug\netstandard2.0\Abp.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.Zero.Common\bin\Debug\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.ZeroCore">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.ZeroCore\bin\Debug\netstandard2.0\Abp.ZeroCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.ZeroCore.EntityFrameworkCore">
+      <HintPath>..\..\..\..\aspnetboilerplate\src\Abp.ZeroCore.EntityFrameworkCore\bin\Debug\netstandard2.0\Abp.ZeroCore.EntityFrameworkCore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

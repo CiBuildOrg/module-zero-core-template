@@ -1,5 +1,6 @@
 ﻿using System;
 using AbpCompanyName.AbpProjectName.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,12 +17,12 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
         /// <param name="configuration">The configuration.</param>
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)
         {
-            app.UseIdentity();
+            //app.UseIdentity();
             
-            if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
-            {
-                app.UseJwtBearerAuthentication(CreateJwtBearerAuthenticationOptions(app));
-            }
+            //if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
+            //{
+            //    app.UseJwtBearerAuthentication(CreateJwtBearerAuthenticationOptions(app));
+            //}
         }
 
         private static JwtBearerOptions CreateJwtBearerAuthenticationOptions(IApplicationBuilder app)
@@ -30,8 +31,8 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 
             return new JwtBearerOptions
             {
-                AutomaticAuthenticate = true,
-                AutomaticChallenge = true,
+                //AutomaticAuthenticate = true,
+                //AutomaticChallenge = true,
                 TokenValidationParameters = new TokenValidationParameters
                 {
                     // The signing key must match!

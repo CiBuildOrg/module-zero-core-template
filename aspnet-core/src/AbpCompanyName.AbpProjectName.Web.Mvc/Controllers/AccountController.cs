@@ -275,14 +275,17 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
                     authSchema = provider
                 });
 
-            return Challenge(
-                new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
-                {
-                    Items = { { "LoginProvider", provider } },
-                    RedirectUri = redirectUrl
-                },
-                provider
-            );
+            return Challenge();
+
+            //TODO: ???
+            //return Challenge(
+            //    new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
+            //    {
+            //        Items = { { "LoginProvider", provider } },
+            //        RedirectUri = redirectUrl
+            //    },
+            //    provider
+            //);
         }
 
         [UnitOfWork]

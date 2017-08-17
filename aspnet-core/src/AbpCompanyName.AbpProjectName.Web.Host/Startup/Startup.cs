@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Abp.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 #if FEATURE_SIGNALR
 using Owin;
@@ -45,6 +46,12 @@ namespace AbpCompanyName.AbpProjectName.Web.Host.Startup
             });
 
             IdentityRegistrar.Register(services);
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => {
+                    options.Audience = "http://localhost:21021/";
+                    options.Authority = "http://localhost:21021/";
+                });
 
             //Configure CORS for angular2 UI
             services.AddCors(options =>
